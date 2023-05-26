@@ -12,6 +12,4 @@ public interface IReservationService {
 	Reservation save(Reservation reservation);
 
 	void delete(Long id);
-	
-	Reservation findById(String id);
-}
+	}

@@ -2,42 +2,41 @@ package com.inti.services.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.inti.entities.Prestation;
+import com.inti.repositories.PrestationRepository;
 import com.inti.services.interfaces.IPrestationService;
 
 @Service
 public class PrestationService implements IPrestationService{
-
+	@Autowired
+	PrestationRepository prestationRepository;
+	
 	@Override
 	public List<Prestation> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return prestationRepository.findAll();
 	}
 
 	@Override
 	public Prestation findOne(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return prestationRepository.findById(id).get();
 	}
 
 	@Override
 	public Prestation save(Prestation prestation) {
-		// TODO Auto-generated method stub
-		return null;
+		return prestationRepository.save(prestation);
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
-		
+		prestationRepository.deleteById(id);
 	}
 
 	@Override
 	public Prestation findByNom(String nom) {
-		// TODO Auto-generated method stub
-		return null;
+		return prestationRepository.findByNomPrestation(nom);
 	}
 
 }

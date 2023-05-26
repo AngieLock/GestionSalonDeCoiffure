@@ -2,42 +2,39 @@ package com.inti.services.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.inti.entities.Reservation;
+import com.inti.repositories.ReservationRepository;
 import com.inti.services.interfaces.IReservationService;
 
 @Service
 public class ReservationService implements IReservationService{
-
+	
+	@Autowired
+	ReservationRepository reservationRepository;
+	
 	@Override
 	public List<Reservation> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return reservationRepository.findAll();
 	}
 
 	@Override
 	public Reservation findOne(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return reservationRepository.findById(id).get();
 	}
 
 	@Override
 	public Reservation save(Reservation reservation) {
-		// TODO Auto-generated method stub
-		return null;
+		return reservationRepository.save(reservation);
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
-		
+		reservationRepository.deleteById(id);
 	}
 
-	@Override
-	public Reservation findById(String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

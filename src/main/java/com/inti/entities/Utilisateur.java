@@ -38,7 +38,7 @@ public class Utilisateur implements Serializable {
 	private boolean enabled = true;
 	@OneToMany(mappedBy = "utilisateur")
 	private List<Avis> avis = new ArrayList<>();
-	@OneToMany(mappedBy = "utilisateurs")
+	@OneToMany(mappedBy = "utilisateur")
 	private List<Reservation> reservations = new ArrayList<>();
 
 	public Utilisateur() {
